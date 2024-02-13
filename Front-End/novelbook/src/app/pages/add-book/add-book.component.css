@@ -1,0 +1,62 @@
+body, h1, h2, h3, p, input, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('src\assets\img\add book.jpg'); 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.mat-toolbar {
+  background-color: #2196F3;
+  /* color: #fff; */
+}
+
+.content {
+  margin: 20px;
+}
+
+form.common {
+  max-width: 400px;
+  margin: 0 auto;
+  /* background-color: rgba(255, 255, 255, 0.8); Adjust alpha value for transparency */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.box {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #1565C0;
+}
+
+.all-btn {
+  text-align-last: center;
+}
+
+.all-btn h3 {
+  margin-top: 20px;
+  font-style: italic;
+  color:gold;
+  
+}

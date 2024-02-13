@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="menu-icon" aria-label="Menu icon">
+      <mat-icon>menu</mat-icon>
+      <div class="all-btn">
+        <a routerLink="add-book" mat-raised-button color="primary">Add-book</a>
+        <a routerLink="viwe-book" mat-raised-button color="primary">viwe-book</a>
+        <!-- <a routerLink="books" mat-raised-button color="primary">books</a> -->
+      </div>
+    </button>
+    <span class="app-title">NOVEL BOOK LIBRARY APPLICATION</span>
+    <div class="auth-buttons">
+      <a routerLink="login" mat-raised-button color="accent">Login</a>
+      <button (click)="logout()" mat-raised-button color="accent">LogOut</button>   
+    </div>
+  </mat-toolbar>
+  <div class="content">
+    <h2>Dont have an account? <a routerLink="signup" >Signup</a></h2>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div>
+    <body>
+        <div class="container">
+            <form class="common"(ngSubmit)="formSubmit()">
+                <div class="box">
+                    <h1>Login To Novel Book</h1>
+                    <input [(ngModel)]="loginData.usernameOrEmail" type="text" name="usernameOrEmail"  placeholder="Username or Email"><br>
+                </div>
+                <div class="box">
+                    <input [(ngModel)]="loginData.password" type="password" name="password"  placeholder="Password"><br>
+                </div>
+                <button type="submit" mat-raised-button color="primary">Login</button>
+                <h2>Dont have an account? <a routerLink="signup" >Register</a></h2>
+            </form>
+        </div>
+    </body>
+</div>
+

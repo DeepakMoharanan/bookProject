@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <div class="auth-buttons">
+    </div>
+  </mat-toolbar>
+
+  <div class="content">
+    <form class="common" (ngSubmit)="onSubmit()">
+      <h1>Welcome to the Add Book page</h1>
+      <div class="box">
+        <input [(ngModel)]="book.name" type="text" name="name" placeholder="Add Book Name" required /><br />
+      </div>
+      <div class="box">
+        <input [(ngModel)]="book.author" type="text" name="author" placeholder="Add Author" required /><br />
+      </div>
+      <div class="box">
+        <input [(ngModel)]="book.publishedYear" type="number" name="Add publishedYear" placeholder="Published Year"
+          required /><br />
+      </div>
+      <div class="all-btn">
+        <button type="submit" mat-raised-button color="primary">Add Book </button><br>
+        <h3>Want to add multiple books?</h3>
+        <div class="aaa">
+          <a routerLink="books" mat-raised-button color="primary"> Click Here</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

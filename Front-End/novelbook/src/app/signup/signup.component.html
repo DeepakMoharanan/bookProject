@@ -1,0 +1,23 @@
+<div>
+    <body>
+      <div class="container">
+        <form class="common" (ngSubmit)="formSubmit()">
+          <h1>Welcome to signup page</h1>
+          <div class="box">
+            <input  [(ngModel)]="user.name" type="name"  name="name" placeholder="name" /><br />
+          </div>
+          <div class="box">
+            <input [(ngModel)]="user.username"  type="username" name="username"placeholder="username" /><br />
+          </div>
+          <div class="box">
+            <input [(ngModel)]="user.email"  type="email" name="email"placeholder="email" /><br />
+          </div>
+          <div class="box">
+            <input [(ngModel)]="user.password" type="password" name="password" placeholder="password" /><br />
+          </div>
+          <button type="submit" mat-raised-button color="primary">signup</button>
+        </form>
+      </div>
+    </body>
+  </div>
+  

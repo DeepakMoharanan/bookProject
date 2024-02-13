@@ -1,0 +1,19 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="common">
+    <h1>Add Multiple Books Page</h1>
+    <div formArrayName="books">
+      <div *ngFor="let book of getBooksControls(); let i = index" class="box" [formGroupName]="i">
+        <label for="name">Book {{ i + 1 }}</label>
+        <input type="text" placeholder="Name" formControlName="name">
+        <input type="text" placeholder="Author" formControlName="author">
+        <input type="text" placeholder="Published Year" formControlName="publishedYear">
+      </div>
+    </div>
+    <div class="card">
+      <mat-card>
+        <button type="button" (click)="addBook()">ADD</button>
+      </mat-card>
+    </div>
+    <button type="submit" mat-raised-button color="primary">Add Books</button>
+  </form>
+</div>

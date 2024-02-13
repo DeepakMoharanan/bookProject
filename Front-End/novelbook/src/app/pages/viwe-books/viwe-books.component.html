@@ -1,0 +1,53 @@
+<h1>Welcome to View Books Page</h1>
+<div class="demo-options">
+  <!-- Add Filter for Name with Icon -->
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by</mat-label>
+    <mat-select [(ngModel)]="selectedFilter">
+      <mat-option value="id" >ID</mat-option>
+      <mat-option value="name">BookName</mat-option>
+      <mat-option value="author">Author</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" *ngIf="selectedFilter === 'id'">
+    <mat-label>Filter by ID</mat-label>
+    <mat-icon matPrefix>filter_list</mat-icon>
+    <input matInput placeholder="Filter by ID" [(ngModel)]="keyword" type="number">
+  </mat-form-field>
+  <mat-form-field appearance="fill" *ngIf="selectedFilter === 'name'">
+    <mat-label>Filter by BookName</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder="Filter by Name" [(ngModel)]="keyword" type="text">
+  </mat-form-field>
+  <mat-form-field appearance="fill" *ngIf="selectedFilter === 'author'">
+    <mat-label>Filter by Author</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder="Filter by Author" [(ngModel)]="keyword" type="text">
+  </mat-form-field>
+</div>
+
+<button mat-raised-button color="primary" (click)="fetchBooks()">Fetch Books</button>
+
+<!-- Table -->
+<table mat-table [dataSource]="books" class="mat-elevation-z8">
+
+  <!-- Column Definitions -->
+  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+    <td mat-cell *matCellDef="let book">{{ book[column] }}</td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- Paginator Component -->
+<mat-paginator 
+  [length]="totalItems" 
+  [pageSize]="pageSize" 
+  [pageSizeOptions]="[5, 10, 15, 20, 100]"
+  [pageIndex]="pageIndex"
+  (page)="onPageChange($event)">
+</mat-paginator>
